@@ -10,6 +10,7 @@ const router = express.Router();
 mongoose.connect('mongodb://localhost:27017');
 const Product = require('./models/product');
 const Customer = require('./models/customer');
+const Order = require('./models/order');
 
 const indexRoutes = require('./routes/index-route');
 const productRoutes = require('./routes/products-route');
