@@ -3,7 +3,10 @@ const mongoose = require('mongoose');
 const Order = mongoose.model('Order');
 
 exports.get = async(data) => {
-    var res = await Order.find({});
+    var res = await Order
+    .find({}, 'number statusc customer items')
+    .populate('customer', 'name')
+    .populate('items.product', 'title');
     return res;
 }
 
